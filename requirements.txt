@@ -1,0 +1,38 @@
+# # 페이지 렌더링
+# playwright==1.44.0
+
+# # LLM API
+# openai==1.35.0          # GPT-4o mini
+# google-generativeai==0.7.2  # Gemini Flash
+
+# # DB
+# # sqlite3은 Python 표준 라이브러리에 포함 (별도 설치 불필요)
+
+# # UI
+# streamlit==1.36.0
+
+# # 유틸
+# python-dotenv==1.0.1    # .env 파일 로드
+# pydantic==2.7.4         # 추출 결과 스키마 검증
+
+
+# 페이지 렌더링 (최신 브라우저 엔진 및 스크래핑 보안 우회 강화)
+playwright>=1.49.0
+
+# LLM API (최신 Gemini 2.5 및 GPT-4o 최신 모델 지원 필수)
+openai>=1.55.0
+google-genai>=1.0.0
+
+# UI (성능 개선 및 파이썬 3.11/3.12 안정성 확보)
+streamlit>=1.40.0
+
+# 유틸
+python-dotenv>=1.0.1
+pydantic>=2.10.0         # 아까 발생한 호환성 문제를 해결한 최신 버전
+
+# HTML → Markdown 변환 (취소선·굵기 등 가격 컨텍스트 보존)
+html2text>=2024.2.26
+
+# 테스트
+pytest>=8.0.0
+pytest-mock>=3.14.0
