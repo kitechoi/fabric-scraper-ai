@@ -7,6 +7,10 @@ LLM_PROVIDER = os.getenv("LLM_PROVIDER", "gemini")  # "openai" 또는 "gemini"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
+# Notion 연동 (선택 — 없으면 Notion 저장 건너뜀)
+NOTION_API_KEY     = os.getenv("NOTION_API_KEY", "")
+NOTION_DATABASE_ID = os.getenv("NOTION_DATABASE_ID", "")
+
 DB_PATH = "fabric.db"
 
 # Gemini 모델 우선순위 — 앞에서부터 순서대로 시도, 429/503 발생 시 다음으로 폴백

@@ -6,6 +6,7 @@ from typing import Optional
 from scraper.fetcher import fetch
 from scraper.extractor import extract, FabricInfo
 from db.database import check_exists, save
+from db.notion_sync import save_to_notion
 
 
 class DuplicateURLError(Exception):
@@ -63,5 +64,10 @@ def collect_fabric_data(
         info.color = color
     # memo는 항상 null (사용자가 편집 화면에서 직접 입력)
 
+    # 1순위: SQLite 저장 (실패하면 즉시 에러 전파)
     row_id = save(info)
+
+    # 2순위: Notion 저장 (실패해도 SQLite는 유지 — 경고만 출력)
+    save_to_notion(info, sqlite_id=row_id)
+
     return info, row_id

@@ -33,6 +33,9 @@ pydantic>=2.10.0         # 아까 발생한 호환성 문제를 해결한 최신
 # HTML → Markdown 변환 (취소선·굵기 등 가격 컨텍스트 보존)
 html2text>=2024.2.26
 
+# Notion 연동 (선택 — NOTION_API_KEY 없으면 자동 skip)
+notion-client>=2.2.1
+
 # 테스트
 pytest>=8.0.0
 pytest-mock>=3.14.0
